@@ -19,3 +19,9 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 # Thư mục làm việc
 WORKDIR /var/www
+
+COPY docker/start.sh /usr/local/bin/start.sh
+
+RUN chmod +x /usr/local/bin/start.sh
+
+CMD ["start.sh"]
